@@ -58,7 +58,7 @@ app.get("/mp3", async (req, res) => {
   const info = await ytdl.getInfo(url);
   const title = info.videoDetails.title;
 
-  res.header("Content-Disposition", `attachment;  filename="${title}.mp3"`);
+  res.header("Content-Disposition", `attachment;  filename="vivekfy_${title}.mp3"`);
   res.setHeader('Content-Type', 'audio/mpeg');
   try {
     const videoURL = req.query.url; // Get the YouTube video URL from the query parameter
